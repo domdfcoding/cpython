@@ -104,31 +104,31 @@ or on combining URL components into a URL string.
    The return value is a :term:`named tuple`, which means that its items can
    be accessed by index or as named attributes, which are:
 
-   +------------------+-------+-------------------------+------------------------+
-   | Attribute        | Index | Value                   | Value if not present   |
-   +==================+=======+=========================+========================+
-   | :attr:`scheme`   | 0     | URL scheme specifier    | *scheme* parameter     |
-   +------------------+-------+-------------------------+------------------------+
-   | :attr:`netloc`   | 1     | Network location part   | empty string           |
-   +------------------+-------+-------------------------+------------------------+
-   | :attr:`path`     | 2     | Hierarchical path       | empty string           |
-   +------------------+-------+-------------------------+------------------------+
-   | :attr:`params`   | 3     | Parameters for last     | empty string           |
-   |                  |       | path element            |                        |
-   +------------------+-------+-------------------------+------------------------+
-   | :attr:`query`    | 4     | Query component         | empty string           |
-   +------------------+-------+-------------------------+------------------------+
-   | :attr:`fragment` | 5     | Fragment identifier     | empty string           |
-   +------------------+-------+-------------------------+------------------------+
-   | :attr:`username` |       | User name               | :const:`None`          |
-   +------------------+-------+-------------------------+------------------------+
-   | :attr:`password` |       | Password                | :const:`None`          |
-   +------------------+-------+-------------------------+------------------------+
-   | :attr:`hostname` |       | Host name (lower case)  | :const:`None`          |
-   +------------------+-------+-------------------------+------------------------+
-   | :attr:`port`     |       | Port number as integer, | :const:`None`          |
-   |                  |       | if present              |                        |
-   +------------------+-------+-------------------------+------------------------+
+   +------------------+-------+--------------------------+----------------------+
+   | Attribute        | Index | Value                    | Value if not present |
+   +==================+=======+==========================+======================+
+   | :attr:`scheme`   | 0     | URL scheme specifier     | *scheme* parameter   |
+   +------------------+-------+--------------------------+----------------------+
+   | :attr:`netloc`   | 1     | Network location part    | empty string         |
+   +------------------+-------+--------------------------+----------------------+
+   | :attr:`path`     | 2     | Hierarchical path        | empty string         |
+   +------------------+-------+--------------------------+----------------------+
+   | :attr:`params`   | 3     | Parameters for last path | empty string         |
+   |                  |       | element                  |                      |
+   +------------------+-------+--------------------------+----------------------+
+   | :attr:`query`    | 4     | Query component          | empty string         |
+   +------------------+-------+--------------------------+----------------------+
+   | :attr:`fragment` | 5     | Fragment identifier      | empty string         |
+   +------------------+-------+--------------------------+----------------------+
+   | :attr:`username` |       | User name                | :const:`None`        |
+   +------------------+-------+--------------------------+----------------------+
+   | :attr:`password` |       | Password                 | :const:`None`        |
+   +------------------+-------+--------------------------+----------------------+
+   | :attr:`hostname` |       | Host name (lower case)   | :const:`None`        |
+   +------------------+-------+--------------------------+----------------------+
+   | :attr:`port`     |       | Port number as integer,  | :const:`None`        |
+   |                  |       | if present               |                      |
+   +------------------+-------+--------------------------+----------------------+
 
    Reading the :attr:`port` attribute will raise a :exc:`ValueError` if
    an invalid port is specified in the URL.  See section
