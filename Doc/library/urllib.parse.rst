@@ -142,6 +142,25 @@ or on combining URL components into a URL string.
    ``#``, ``@``, or ``:`` will raise a :exc:`ValueError`. If the URL is
    decomposed before parsing, no error will be raised.
 
+   The :attr:`params` attribute will only be parsed from the URL if the scheme
+   is one of the following: ``ftp``, ``hdl``, ``prospero``, ``http``, ``imap``,
+   ``https``, ``shttp``, ``rtsp``, ``rtspu``, ``sip``, ``sips``, ``mms``,
+   ``sftp`` or ``tel``.
+   For other schemes the :attr:`params` attribute will always be an empty
+   string even if the path contains parameters. If present, the parameters
+   will be included in the :attr:`path` attribute instead.
+
+   .. doctest::
+      :options: +NORMALIZE_WHITESPACE
+
+      >>> from urllib.parse import urlparse
+      >>> urlparse("https://example.org/path/name;param=val1,val2val3")
+      ParseResult(scheme='https', netloc='example.org', path='/path/name',
+                  params='param=val1,val2val3', query='', fragment='')
+      >>> urlparse("gopher://example.org/path/name;param=val1,val2val3")
+      ParseResult(scheme='gopher', netloc='example.org', path='/path/name;param=val1,val2val3',
+				  params='', query='', fragment='')
+
    As is the case with all named tuples, the subclass has a few additional methods
    and attributes that are particularly useful. One such method is :meth:`_replace`.
    The :meth:`_replace` method will return a new ParseResult object replacing specified
